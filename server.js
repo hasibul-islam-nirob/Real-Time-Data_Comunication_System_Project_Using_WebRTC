@@ -18,13 +18,28 @@ app.get('/io',function (req, res){
 })
 
 
+let UserList = [];
 io.on('connection', function (socket){
-    console.log("New user Connected");
-
+    console.log("User Join");
+    // Create New User
+    socket.on('NewUserCreator',function (user){
+        UserList.push(user); // New User Add on UserList Array
+        io.emit('NewUserJoinerAlert', user['Name']);
+        io.emit('UserList',UserList);
+        socket.PeerID = user['PeerID'];
+    })
 
 
     socket.on('disconnect',function (){
-        console.log("New user Disconnected");
+        // Delete or Left New User
+        UserList.map((list, i)=> {
+            if ( socket.PeerID === list['PeerID'] ){
+                UserList.splice(i, 1);
+                io.emit('UserList', UserList);
+                io.emit('UserLeftAlert', list['Name']);
+            }
+        });
+        console.log("User Left");
     })
 })
 

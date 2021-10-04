@@ -26,6 +26,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.17.1" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Assets/css" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -49,6 +51,10 @@
       <updated>1631706858582</updated>
       <workItem from="1631706860065" duration="7135000" />
       <workItem from="1631765321149" duration="5203000" />
+      <workItem from="1632496160038" duration="1268000" />
+      <workItem from="1633249371348" duration="5066000" />
+      <workItem from="1633285136323" duration="5586000" />
+      <workItem from="1633362296870" duration="8770000" />
     </task>
     <servers />
   </component>

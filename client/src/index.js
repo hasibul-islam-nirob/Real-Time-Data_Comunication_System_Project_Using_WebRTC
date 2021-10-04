@@ -5,6 +5,9 @@ import WaitingPage from './Pages/WaitingPage';
 import {Route, Switch} from "react-router";
 import {BrowserRouter} from "react-router-dom";
 
+import './Assets/css/bootstrap.min.css';
+import './Assets/css/style.css';
+
 ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
