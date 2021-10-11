@@ -83,11 +83,9 @@ class MeetingPage extends Component {
     render() {
         return (
             <Fragment>
-                <NavHeader/>
+                <NavHeader UserList={this.state.UserList} />
                 <UserCanvas/>
-                <NavBottom/>
-
-
+                <NavBottom UserList={this.state.UserList} />
                 {this.RedirectPage()}
             </Fragment>
         );

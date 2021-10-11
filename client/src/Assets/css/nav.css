@@ -1,7 +1,7 @@
 .bottom-nav-item:hover{
     cursor: pointer;
     font-size: 28px !important;
-    color: #54e07d !important;
+    color: #17e367 !important;
 }
 .navbar{
     background: #1F263C !important;
@@ -13,10 +13,26 @@
     width: 30px;
 }
 .nav-item{
-    color: #827bd8 !important;
+    color: #efefef !important;
 }
 .bottom-nav-item{
     cursor: pointer;
     font-size: 28px !important;
-    color: #827bd8 !important;
+    color: #e5e0e0 !important;
+}
+
+.exit-bottom-nav-item{
+    cursor: pointer;
+    font-size: 28px !important;
+    color: #e5e0e0 !important;
+}
+.exit-bottom-nav-item:hover{
+    cursor: pointer;
+    font-size: 28px !important;
+    color: #e70427 !important;
+}
+
+.Logo{
+    width: 30px;
+    color: #e5e0e0 !important;
 }

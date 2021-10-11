@@ -24,7 +24,7 @@ class ToastMessage {
     UserJoinAlert(Name){
         toast.success(
             <div className="toast-text" >
-                {Name} is Join !
+                {Name} Has Been Joined !
             </div>,
             {position:"top-right"}
         )
@@ -33,7 +33,7 @@ class ToastMessage {
     LeftAlert(Name){
         toast.error(
             <div className="toast-text" >
-                {Name} is Left !
+                {Name} Has Been Left !
             </div>,
             {position:"top-right"}
         )
