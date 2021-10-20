@@ -55,13 +55,16 @@ class MeetingPage extends Component {
                 this.setState({SelfPeerID:id});
 
                 // Create New User & Send Socket Server
-                let NewUser ={Name:getUserName(), PeerID:id}
-                socket.emit('NewUserCreator', NewUser);
+                this.CreateNewUser(id);
+                //let NewUser ={Name:getUserName(), PeerID:id}
+                //socket.emit('NewUserCreator', NewUser);
 
                 // Alert New Joiner Received From Socket Server
+                this.AlertNewUserJoin();
+                /*
                 socket.on('NewUserJoinerAlert', (Name)=>{
                     UserJoinAlert(Name);
-                })
+                }) */
 
                 //Update Joiner List
                 socket.on('UserList', (UserList)=>{
@@ -69,9 +72,11 @@ class MeetingPage extends Component {
                 })
 
                 // Alert Left User
+
+                /*
                 socket.on('UserLeftAlert', (Name)=>{
                     LeftAlert(Name);
-                })
+                }) */
 
             }else{
                 RequestFailed();
@@ -81,6 +86,25 @@ class MeetingPage extends Component {
 
         });
     }
+
+    // Create New User Function
+    CreateNewUser=(id)=>{
+        let NewUser ={Name:getUserName(), PeerID:id}
+        socket.emit('NewUserCreator', NewUser);
+    }
+
+    // Alert New User Joiner Function
+    AlertNewUserJoin=()=>{
+        socket.on('NewUserJoinerAlert', (Name)=>{
+            UserJoinAlert(Name + " Joined");
+            let voiceMsg = new SpeechSynthesisUtterance();
+            voiceMsg.text = Name +" has been joined";
+            window.speechSynthesis.speak(voiceMsg);
+        })
+    }
+
+
+
 
     render() {
         return (
