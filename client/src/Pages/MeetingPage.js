@@ -67,12 +67,14 @@ class MeetingPage extends Component {
                 }) */
 
                 //Update Joiner List
+                this.UpdateUserCountList();
+                /*
                 socket.on('UserList', (UserList)=>{
                     this.setState({UserList:UserList});
-                })
+                }) */
 
                 // Alert Left User
-
+                this.AlertLeftUser();
                 /*
                 socket.on('UserLeftAlert', (Name)=>{
                     LeftAlert(Name);
@@ -96,26 +98,43 @@ class MeetingPage extends Component {
     // Alert New User Joiner Function
     AlertNewUserJoin=()=>{
         socket.on('NewUserJoinerAlert', (Name)=>{
-            UserJoinAlert(Name + " Joined");
+            UserJoinAlert(Name);
             let voiceMsg = new SpeechSynthesisUtterance();
             voiceMsg.text = Name +" has been joined";
             window.speechSynthesis.speak(voiceMsg);
         })
     }
 
+    // Alert Left User Function
+    AlertLeftUser=()=>{
+        socket.on('UserLeftAlert', (Name)=>{
+            LeftAlert(Name);
+            let voiceMsg = new SpeechSynthesisUtterance();
+            voiceMsg.text = Name + " has been left";
+            window.speechSynthesis.speak(voiceMsg);
 
-
-
-    render() {
-        return (
-            <Fragment>
-                <NavHeader UserList={this.state.UserList} />
-                <UserCanvas/>
-                <NavBottom UserList={this.state.UserList} />
-                {this.RedirectPage()}
-            </Fragment>
-        );
+        })
     }
+
+    //Update Joiner List
+    UpdateUserCountList=()=>{
+        socket.on('UserList', (UserList)=>{
+            this.setState({UserList:UserList});
+        })
+    }
+
+
+
+render() {
+return (
+<Fragment>
+<NavHeader UserList={this.state.UserList} />
+<UserCanvas/>
+<NavBottom UserList={this.state.UserList} />
+{this.RedirectPage()}
+</Fragment>
+);
+}
 }
 
 export default MeetingPage;
