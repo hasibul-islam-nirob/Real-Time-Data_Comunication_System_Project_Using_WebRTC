@@ -44,41 +44,19 @@ class MeetingPage extends Component {
 
         peer.on('open',(id)=>{
             if (id.length !== 0){
-
                 // Push Peer ID All In One
                 let SetConnectedPeerList = this.state.ConnectedPeerList;
                 SetConnectedPeerList.push(id);
                 this.setState({ConnectedPeerList: SetConnectedPeerList});
-
                 // Store PeerID On Session
                 setPeerID(id);
                 this.setState({SelfPeerID:id});
 
-                // Create New User & Send Socket Server
                 this.CreateNewUser(id);
-                //let NewUser ={Name:getUserName(), PeerID:id}
-                //socket.emit('NewUserCreator', NewUser);
-
-                // Alert New Joiner Received From Socket Server
                 this.AlertNewUserJoin();
-                /*
-                socket.on('NewUserJoinerAlert', (Name)=>{
-                    UserJoinAlert(Name);
-                }) */
-
-                //Update Joiner List
                 this.UpdateUserCountList();
-                /*
-                socket.on('UserList', (UserList)=>{
-                    this.setState({UserList:UserList});
-                }) */
-
-                // Alert Left User
                 this.AlertLeftUser();
-                /*
-                socket.on('UserLeftAlert', (Name)=>{
-                    LeftAlert(Name);
-                }) */
+
 
             }else{
                 RequestFailed();
