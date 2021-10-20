@@ -30,6 +30,7 @@
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Assets/css" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -57,6 +58,9 @@
       <workItem from="1633285136323" duration="5586000" />
       <workItem from="1633362296870" duration="8770000" />
       <workItem from="1633641687134" duration="8469000" />
+      <workItem from="1634750896813" duration="182000" />
+      <workItem from="1634759882764" duration="3454000" />
+      <workItem from="1634763396530" duration="330000" />
     </task>
     <servers />
   </component>

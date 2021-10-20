@@ -18,7 +18,9 @@ class MeetingPage extends Component {
             Redirect:false,
             UserList:[],
             PeerObj:null,
-            SelfPeerID:""
+            SelfPeerID:"",
+            ConnectedPeerList:[],
+            AudioVideoPermission:{'video':true, 'audio':false}
         }
     }
 
@@ -41,8 +43,12 @@ class MeetingPage extends Component {
         this.setState({PeerObj:peer});
 
         peer.on('open',(id)=>{
-
             if (id.length !== 0){
+
+                // Push Peer ID All In One
+                let SetConnectedPeerList = this.state.ConnectedPeerList;
+                SetConnectedPeerList.push(id);
+                this.setState({ConnectedPeerList: SetConnectedPeerList});
 
                 // Store PeerID On Session
                 setPeerID(id);
@@ -67,15 +73,11 @@ class MeetingPage extends Component {
                     LeftAlert(Name);
                 })
 
-
-
             }else{
                 RequestFailed();
                 LogOut();
                 this.setState({Redirect:true});
             }
-
-
 
         });
     }
@@ -93,3 +95,5 @@ class MeetingPage extends Component {
 }
 
 export default MeetingPage;
+
+
