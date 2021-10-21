@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {Container, Navbar} from "react-bootstrap";
 import navIcon from '../Assets/images/teams.svg';
 import logo from '../Assets/images/Logo.webp';
+import cLogo from '../Assets/images/cuLogo.png';
 import {ImExit} from "react-icons/all";
 import {getUserName, LogOut} from "../Helpers/SessionHelpers";
 import {Redirect} from "react-router";
@@ -41,8 +42,8 @@ class NavHeader extends Component {
                 <Navbar className="sticky-top" bg="dark" >
                     <Container fluid={true}>
                         <Navbar.Brand href="/">
-                            <img className="nav-icon" src={logo} />
-                            <span onClick={this.ExitBtn} className="nav-item mx-2"> Reunion Fair House </span>
+                            <img className="nav-icon" src={cLogo} alt="" />
+                            <span onClick={this.ExitBtn} className="nav-item mx-2"> City University - WebRTC </span>
 
                         </Navbar.Brand>
                     </Container>
