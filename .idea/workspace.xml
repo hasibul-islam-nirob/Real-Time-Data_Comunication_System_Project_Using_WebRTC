@@ -28,15 +28,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.17.1" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.17.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Assets/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/Assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\Java Script\Real-Time-Data_Comunication_System_Project_Using_WebRTC\client\src\Assets\css" />
       <recent name="G:\Java Script\Real-Time-Data_Comunication_System_Project_Using_WebRTC\client\src\Assets\images" />
+      <recent name="G:\Java Script\Real-Time-Data_Comunication_System_Project_Using_WebRTC\client\public" />
+      <recent name="G:\Java Script\Real-Time-Data_Comunication_System_Project_Using_WebRTC\client\src\Assets\css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\Java Script\Real-Time-Data_Comunication_System_Project_Using_WebRTC\client\src\Assets\images" />
@@ -63,6 +64,8 @@
       <workItem from="1634763396530" duration="5611000" />
       <workItem from="1634795991924" duration="1436000" />
       <workItem from="1634837208393" duration="1970000" />
+      <workItem from="1634919081208" duration="7147000" />
+      <workItem from="1635008817924" duration="342000" />
     </task>
     <servers />
   </component>

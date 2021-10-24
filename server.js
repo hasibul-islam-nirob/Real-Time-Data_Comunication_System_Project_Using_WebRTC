@@ -8,7 +8,7 @@ const port = 4000;
 const path = require('path');
 
 app.use(expressJS.static('client/build'));
-app.get('*', function (req, res){
+app.get('*', (req, res)=>{
     res.sendFile(path.resolve(__dirname,'client','build','index.html'));
 })
 
