@@ -27,7 +27,14 @@ io.on('connection', function (socket){
         io.emit('NewUserJoinerAlert', user['Name']);
         io.emit('UserList',UserList);
         socket.PeerID = user['PeerID'];
+
+        socket.on("msgSendServer",function (chatMsg, user) {
+            io.emit("magTransfer",user['Name']+": "+chatMsg);
+        })
+
     })
+
+
 
 
     socket.on('disconnect',function (){

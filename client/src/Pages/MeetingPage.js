@@ -39,10 +39,9 @@ class MeetingPage extends Component {
             this.setState({Redirect:true});
         }else {
             this.GeneratePeerID();
-            this.CreateSelfVideoPreview();
+
         }
     }
-
 
     GeneratePeerID=()=>{
         let STUNServer = "stun:stun.l.google.com:19302";
@@ -83,7 +82,8 @@ class MeetingPage extends Component {
                 this.UpdateUserCountList();
                 this.AlertLeftUser();
 
-                this.setState({isLoading:"d-none"})
+                this.setState({isLoading:"d-none"});
+                this.CreateSelfVideoPreview();
             }else{
                 RequestFailed();
                 LogOut();
@@ -93,7 +93,6 @@ class MeetingPage extends Component {
 
         });
     }
-
     // Self Video Preview
     CreateSelfVideoPreview = () =>{
         const myVideo = document.createElement("video");
@@ -117,13 +116,11 @@ class MeetingPage extends Component {
         })
         videoCard.append(video);
     }
-
     // Create New User Function
     CreateNewUser=(id)=>{
         let NewUser ={Name:getUserName(), PeerID:id}
         socket.emit('NewUserCreator', NewUser);
     }
-
     // Alert New User Joiner Function
     AlertNewUserJoin=()=>{
         socket.on('NewUserJoinerAlert', (Name)=>{
@@ -133,7 +130,6 @@ class MeetingPage extends Component {
             window.speechSynthesis.speak(voiceMsg);
         })
     }
-
     // Alert Left User Function
     AlertLeftUser=()=>{
         socket.on('UserLeftAlert', (Name)=>{
@@ -144,15 +140,12 @@ class MeetingPage extends Component {
 
         })
     }
-
     //Update Joiner List
     UpdateUserCountList=()=>{
         socket.on('UserList', (UserList)=>{
             this.setState({UserList:UserList});
         })
     }
-
-
     //GetJoinerList
     GetJoinerList = () =>{
         socket.on('UserList', (UserListApp)=>{
@@ -164,7 +157,6 @@ class MeetingPage extends Component {
             })
         })
     }
-
     // Create Mutual Connection
     CreateMutualConnection = (othersPeerID) =>{
         let connectedPeerList = this.state.ConnectedPeerList;
@@ -184,7 +176,6 @@ class MeetingPage extends Component {
             })
         }
     }
-
     // Receive Mutual VideoCall
     ReceiveMutualVideoCall = () =>{
         let myPeerID = this.state.PeerObj;
@@ -197,8 +188,6 @@ class MeetingPage extends Component {
                 .catch( ()=>{})
         })
     }
-
-
     //Create Mutual Video Call
     CreateMutualVideoCall = (othersPeerID) =>{
         let connectedPeerList = this.state.ConnectedPeerList;
