@@ -28,13 +28,11 @@ io.on('connection', function (socket){
         io.emit('UserList',UserList);
         socket.PeerID = user['PeerID'];
 
-        socket.on("msgSendServer",function (chatMsg, user) {
-            io.emit("magTransfer",user['Name']+": "+chatMsg);
-        })
-
     })
 
-
+    socket.on("msgSendServer",function (chatMsg) {
+        io.emit("magTransfer",chatMsg);
+    })
 
 
     socket.on('disconnect',function (){

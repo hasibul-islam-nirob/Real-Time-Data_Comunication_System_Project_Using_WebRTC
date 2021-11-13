@@ -2,6 +2,7 @@ import React, {Component, Fragment} from 'react';
 import {FaUsers, FaVideo, MdMessage, MdScreenShare, TiMicrophone} from "react-icons/all";
 import {Button, Col, Container, Form, InputGroup, Modal, Row} from "react-bootstrap";
 import io from "socket.io-client";
+import {getUserName} from "../Helpers/SessionHelpers";
 
 const socket = io.connect('/');
 
@@ -27,7 +28,7 @@ class NavBottom extends Component {
         let inputMsg = document.getElementById("chatInputField").value;
         if (inputMsg.length > 0){
             socket.emit("msgSendServer",inputMsg);
-            document.getElementById("chatInputField").value = "";
+            document.getElementById("chatInputField").value = " ";
         }
 
     }
