@@ -47,11 +47,13 @@ class NavBottom extends Component {
         let askBrowser = {'video':true, 'audio':false};
         navigator.mediaDevices.getDisplayMedia(askBrowser)
             .then(function (stream){
-                let video = document.createElement('video');
+                let video = document.querySelector('video');
+                video.style.width = '100%';
+                video.style.height = '100%';
                 video.srcObject = stream;
                 video.play();
-            }).catch(function(){
-
+            }).catch(function(err){
+            alert("Access Not Allow");
         })
     }
 
@@ -100,6 +102,8 @@ class NavBottom extends Component {
                     </div>
                 </div>
 
+
+                <video id="video"></video>
 
                 <Modal
                     size="lg"
